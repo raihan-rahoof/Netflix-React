@@ -37,8 +37,8 @@ function Rowpost(props) {
     <div className='Row' >
         <h5>{props.title}</h5>
         <div className="posters">
-          {Trendings.map((movie)=>
-          <img onClick={()=> handleMovie(movie.id)} className={props.isSmall ? 'small-poster':'poster'} src={`${imageUrl+movie.backdrop_path}`} alt="" />
+          {Trendings.map((movie,index)=>
+          <img key={index}onClick={()=> handleMovie(movie.id)} className={props.isSmall ? 'small-poster':'poster'} src={`${imageUrl+movie.backdrop_path}`} alt="" />
           )}
         </div>
         { urlId && <YouTube opts={opts} videoId={urlId} />}
